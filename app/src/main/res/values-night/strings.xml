@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Quiz Assignment</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+    <string name="progress" translatable="false">%1$d / %2$d</string>
+</resources>
