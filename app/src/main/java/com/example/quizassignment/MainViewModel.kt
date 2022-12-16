@@ -11,13 +11,14 @@ class MainViewModel: ViewModel() {
             Question(
                 Question.Options(
                     listOf(
-                        "Yellow",
-                        "Blue",
-                        "Black",
-                        "White"
+                        "Cricket",
+                        "Football",
+                        "Table Tennis",
+                        "Chess"
                     )
                 ),
-                title = "What is your favourite color?"
+                title = "What is your favourite sports?",
+                url = "https://images.pexels.com/photos/3628912/pexels-photo-3628912.jpeg"
             ),
             Question(
                 Question.Options(
@@ -28,7 +29,8 @@ class MainViewModel: ViewModel() {
                         "Accountant"
                     )
                 ),
-                title = "What is your profession?"
+                title = "What is your profession?",
+                url = "https://images.pexels.com/photos/3628912/pexels-photo-3628912.jpeg"
             ),
             Question(
                 Question.Options(
@@ -39,7 +41,8 @@ class MainViewModel: ViewModel() {
                         "Night"
                     )
                 ),
-                title = "What is your time?"
+                title = "What is your time?",
+                url = "https://images.pexels.com/photos/3628912/pexels-photo-3628912.jpeg"
             ),
         )
     )

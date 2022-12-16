@@ -21,11 +21,30 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:text="How would you like to describe your day?" />
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/questionImage"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="15dp"
+            tools:src="@tools:sample/avatars"
+            app:layout_constraintEnd_toEndOf="@+id/questionTitle"
+            app:layout_constraintTop_toBottomOf="@+id/questionTitle"
+            app:layout_constraintStart_toStartOf="@+id/questionTitle" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/questionImage"
+            app:layout_constraintEnd_toEndOf="@+id/questionImage"
+            app:layout_constraintStart_toStartOf="@+id/questionImage"
+            app:layout_constraintTop_toTopOf="@+id/questionImage" />
+
         <RadioGroup
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="@+id/questionTitle"
-            app:layout_constraintTop_toBottomOf="@+id/questionTitle"
+            app:layout_constraintTop_toBottomOf="@+id/questionImage"
             android:layout_marginTop="20dp">
 
             <com.google.android.material.radiobutton.MaterialRadioButton

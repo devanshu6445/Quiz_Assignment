@@ -1,12 +1,21 @@
 package com.example.quizassignment
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Website.URL
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.quizassignment.databinding.FragmentQuestionBinding
 import com.example.quizassignment.models.Question
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.net.URL
+import javax.net.ssl.HttpsURLConnection
 
 class QuestionFragment(
     private val question: Question
@@ -25,6 +34,15 @@ class QuestionFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding?.questionTitle?.text = question.title
+        binding?.loading?.isVisible = true
+        lifecycleScope.launch(Dispatchers.IO){
+            val stream = URL(question.url).openStream()
+            val image = BitmapFactory.decodeStream(stream)
+            withContext(Dispatchers.Main){
+                binding?.loading?.isVisible = false
+                binding?.questionImage?.setImageBitmap(image)
+            }
+        }
         binding?.apply {
             option1.text = question.options.list[0]
             option2.text = question.options.list[1]
